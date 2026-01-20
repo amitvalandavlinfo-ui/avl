@@ -45,7 +45,7 @@ setTimeout(() => {
     access.style.display = "flex";
 
     if (Date.now() < lockedUntil) startTimer();
-}, 1500);
+}, 3500);
 
 
 function checkAccess() {
