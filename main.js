@@ -1,6 +1,6 @@
 const ACCESS_CODE = "ASR555";
 const LOCK_TIME = 30;
-const IG_URL = "https://www.instagram.com/amitvaland_14/";
+const IG_URL = "https://www.instagram.com/amitvaland_14?igsh=MWs3MnBmYmlyOXJwOQ=="
 
 
 let lockedUntil = localStorage.getItem("asr_lock_until")
