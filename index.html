@@ -1,11 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <title>ASR-555 | Secure Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    Comming Soon
+
+    <canvas id="matrixCanvas"></canvas>
+
+    <div id="coming" class="layer">
+        <div class="status-bar"><span></span></div>
+        <div class="big-coming">ASR-555</div>
+        <div class="big-coming">COMING SOON</div>
+        <div class="sub-line">AVL INFO × AINET · ENCRYPTED SYSTEM</div>
+    </div>
+
+    <div id="access" class="layer">
+        <div class="access-box">
+            <div class="asr">ASR-555</div>
+            <div class="sec">AUTHORIZATION REQUIRED</div>
+
+            <input id="code" type="password" placeholder="ENTER ACCESS KEY">
+            <button onclick="checkAccess()">AUTHORIZE</button>
+
+            <div id="error"></div>
+            <div id="timer"></div>
+        </div>
+    </div>
+
+    <div id="loading" class="layer">
+        <h2>DECRYPTING SYSTEM</h2>
+        <div class="loader"><span></span></div>
+    </div>
+
+    <nav class="nav" id="nav">
+        <div>ASR-555</div>
+        <div>AVL INFO × AINET</div>
+    </nav>
+
+    <main id="main">
+
+        <section class="hero">
+            <h1>SYSTEM ACCESS GRANTED</h1>
+            <p>Advanced Secure Runtime · Collaborative Portfolio</p>
+        </section>
+
+        <section class="portfolio">
+            <div class="grid">
+                <div class="card">
+                    <span class="tag founder">FOUNDER</span>
+                    <span class="tag avl">AVL INFO</span>
+                    <h3>Amit Valand</h3>
+                    <p>System Architecture & Core Logic</p>
+                </div>
+
+                <div class="card">
+                    <span class="tag founder">FOUNDER</span>
+                    <span class="tag ainet">AINET</span>
+                    <h3>Rajesh Kumar</h3>
+                    <p>Infrastructure & Power Systems</p>
+                </div>
+
+                <div class="card">
+                    <span class="tag partner">PARTNER</span>
+                    <h3>Yash Nai</h3>
+                    <p>Runtime Development</p>
+                </div>
+
+                <div class="card">
+                    <span class="tag partner">PARTNER</span>
+                    <h3>Rudra Rana</h3>
+                    <p>Operations & Monitoring</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="terminal-section">
+            <div class="terminal">
+                <div class="terminal-header">ASR-555 TERMINAL</div>
+                <div class="terminal-output" id="terminalOutput">
+                    Type <b>help</b>
+                </div>
+                <input class="terminal-input" id="terminalInput" placeholder="> ">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-line"></div>
+        <div>© 2026 ASR-555 · AVL INFO × AINET</div>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
+
 </html>
