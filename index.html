@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVL Infotech - Live Web Development Course</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #050505;
+            color: #fff;
+            line-height: 1.5;
+            overflow-x: hidden
+        }
+
+        body:before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(124, 58, 237, .20), transparent 28%), radial-gradient(circle at left, rgba(37, 99, 235, .18), transparent 30%);
+            pointer-events: none
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: auto;
+            padding: 20px
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 18px
+        }
+
+        .pill {
+            padding: 12px 18px;
+            border-radius: 14px;
+            background: #e11d48;
+            font-weight: 700
+        }
+
+        .box {
+            padding: 14px 18px;
+            border: 1px solid #6d28d9;
+            border-radius: 16px;
+            background: #0f0a18
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 24px;
+            align-items: center
+        }
+
+        .big {
+            font-size: 120px;
+            font-weight: 900;
+            line-height: .9;
+            background: linear-gradient(180deg, #38bdf8, #9333ea);
+            -webkit-background-clip: text;
+            color: transparent
+        }
+
+        .white {
+            font-size: 90px;
+            font-weight: 900;
+            line-height: .95
+        }
+
+        .sub {
+            font-size: 24px;
+            margin: 18px 0
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 20px
+        }
+
+        .card {
+            background: #0f0f15;
+            border: 1px solid #312e81;
+            border-radius: 18px;
+            padding: 18px
+        }
+
+        .tech {
+            font-size: 34px;
+            font-weight: 800
+        }
+
+        .rightpanel {
+            background: #0b0613;
+            border: 1px solid #6d28d9;
+            border-radius: 24px;
+            padding: 24px;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 50px rgba(124, 58, 237, .25)
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #111, #050505);
+            padding: 20px;
+            color: #f59e0b
+        }
+
+        .section {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 20px;
+            margin-top: 26px
+        }
+
+        .smallgrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px
+        }
+
+        .small {
+            padding: 16px;
+            border-radius: 16px;
+            background: #0f0f15;
+            border: 1px solid #312e81;
+            text-align: center
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 30px;
+            border-radius: 18px;
+            background: linear-gradient(90deg, #7c3aed, #2563eb);
+            color: #fff;
+            text-decoration: none;
+            font-size: 34px;
+            font-weight: 900
+        }
+
+        .cta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 28px 0
+        }
+
+        .site {
+            padding: 18px 24px;
+            border: 1px solid #6d28d9;
+            border-radius: 18px;
+            background: #0f0a18;
+            font-size: 32px;
+            font-weight: 800
+        }
+
+        .muted {
+            color: #d1d5db
+        }
+
+        @media(max-width:900px) {
+
+            .hero,
+            .section {
+                grid-template-columns: 1fr
+            }
+
+            .big {
+                font-size: 80px
+            }
+
+            .white {
+                font-size: 64px
+            }
+
+            .row,
+            .smallgrid {
+                grid-template-columns: 1fr
+            }
+
+            .btn,
+            .site {
+                font-size: 24px;
+                width: 100%;
+                text-align: center
+            }
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 8px rgba(139, 92, 246, .25)
+            }
+
+            50% {
+                box-shadow: 0 0 28px rgba(139, 92, 246, .55)
+            }
+
+            100% {
+                box-shadow: 0 0 8px rgba(139, 92, 246, .25)
+            }
+        }
+
+        .glowfx {
+            animation: pulseGlow 2.4s infinite;
+        }
+
+        .review {
+            color: #d1d5db;
+            font-style: italic;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='loader'
+        style='position:fixed;inset:0;background:#050505;display:flex;align-items:center;justify-content:center;z-index:9999;color:#8b5cf6;font-size:40px;font-weight:900'>
+        Loading AVL INFOTECH...</div>
+    <div class='container'>
+        <div class='topbar'>
+            <div class='pill'>🔴 LIVE COURSE</div>
+            <div class='box'>From Beginner To Developer • FREE COURSE</div>
+            <div class='box'>Mentor Amit Valand • Starting On 28-04-2026</div>
+        </div>
+        <section class='hero'>
+            <div>
+                <div class='big'>AVL</div>
+                <div class='white'>INFO<br>INTERN</div>
+                <div class='sub'>Complete <span style='color:#8b5cf6'>Web Development</span> <span
+                        style='color:#22c55e'>FREE Course</span></div>
+                <div class='sub'>Master <span style='color:#f97316'>HTML</span>, <span style='color:#3b82f6'>CSS</span>
+                    & <span style='color:#eab308'>JavaScript</span></div>
+                <div class='row'>
+                    <div class='card'>
+                        <div class='tech' style='color:#f97316'>HTML</div>
+                        <div class='muted'>Structure The Web</div>
+                    </div>
+                    <div class='card'>
+                        <div class='tech' style='color:#3b82f6'>CSS</div>
+                        <div class='muted'>Style Like Pro</div>
+                    </div>
+                    <div class='card'>
+                        <div class='tech' style='color:#eab308'>JS</div>
+                        <div class='muted'>Interactive</div>
+                    </div>
+                </div>
+            </div>
+            <div class='rightpanel'>
+                <div class='screen'>
+                    <pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;AVL Info&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+Learn. Build. Master.
+&lt;/body&gt;</pre>
+                </div>
+            </div>
+        </section>
+        <section class='section'>
+            <div>
+                <div class='smallgrid'>
+                    <div class='small'>MONDAY<br>Live Class</div>
+                    <div class='small'>WEDNESDAY<br>Live Class</div>
+                    <div class='small'>FRIDAY<br>Live Class</div>
+                </div>
+                <div class='small' style='margin-top:12px'>SUNDAY • Doubt Session</div>
+            </div>
+            <div class='card'>
+                <h2 style='margin-bottom:12px'>What You Will Get</h2>
+                <p class='muted'>✔ Live Interactive Classes</p>
+                <p class='muted'>✔ Real World Projects</p>
+                <p class='muted'>✔ Hands-on Practice</p>
+                <p class='muted'>✔ Doubt Support</p>
+                <p class='muted'>✔ Certificate Guidance</p>
+            </div>
+        </section>
+        <div class='card'
+            style='margin-top:20px;text-align:center;background:linear-gradient(90deg,#052e16,#14532d);border-color:#22c55e'>
+            <h2 style='color:#22c55e'>👨‍🏫 Mentor: Amit Valand</h2>
+            <p class='muted'>Learn with Guidance • Build with Confidence</p>
+        </div>
+
+        <div class='cta'>
+            <a class='btn' target='_blank'
+                href='https://wa.me/919724164743?text=Hello%20Amit%20Sir,%20I%20want%20to%20enroll%20in%20AVL%20Infotech%20Course'>ENROLL
+                NOW</a>
+            <div class='site'>www.avlinfo.in</div>
+        </div>
+    </div>
+    <a href='https://wa.me/919724164743?text=Hello%20Amit%20Sir,%20I%20want%20course%20details' target='_blank'
+        style='position:fixed;right:18px;bottom:18px;background:#22c55e;color:#000;padding:14px 16px;border-radius:50%;font-size:24px;text-decoration:none;z-index:99'>💬</a>
+    <script>window.addEventListener('load', function () { setTimeout(function () { document.getElementById('loader').style.display = 'none'; }, 1200); }); setInterval(function () { var e = document.getElementById('seatCount'); if (e) { var n = parseInt(e.innerText); if (n > 7) { e.innerText = n - 1; } } }, 9000); setTimeout(function () { if (confirm('Need details? Chat on WhatsApp now!')) { window.open('https://wa.me/919999999999?text=Hello%20Amit%20Sir,%20I%20want%20to%20join%20AVL%20Infotech'); } }, 5000);</script>
+</body>
+
+</html>
